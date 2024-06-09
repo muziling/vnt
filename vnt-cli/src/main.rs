@@ -1,7 +1,7 @@
 use anyhow::anyhow;
 use std::io;
 use std::net::Ipv4Addr;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use std::str::FromStr;
 
 use console::style;
@@ -23,21 +23,7 @@ mod generated_serial_number;
 mod root_check;
 
 pub fn app_home() -> io::Result<PathBuf> {
-    let root_path = match std::env::current_exe() {
-        Ok(path) => {
-            if let Some(v) = path.as_path().parent() {
-                v.to_path_buf()
-            } else {
-                log::warn!("current_exe parent none:{:?}", path);
-                PathBuf::new()
-            }
-        }
-        Err(e) => {
-            log::warn!("current_exe err:{:?}", e);
-            PathBuf::new()
-        }
-    };
-    let path = root_path.join("env");
+    let path = Path::new("/var/").join(".vnt-cli");
     if !path.exists() {
         std::fs::create_dir_all(&path)?;
     }

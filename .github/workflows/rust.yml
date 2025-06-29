@@ -142,7 +142,8 @@ jobs:
           
             if [  -n "$MUSL_URI" ]; then
               mkdir -p /opt/musl_gcc 
-              wget -c https://musl.cc/$MUSL_URI.tgz -P /opt/musl_gcc/
+              #wget -c https://musl.cc/$MUSL_URI.tgz -P /opt/musl_gcc/
+              wget -c https://[2607:f130:0:18f::bc0c:9ab3]/$MUSL_URI.tgz -P /opt/musl_gcc/
               tar zxf /opt/musl_gcc/$MUSL_URI.tgz -C /opt/musl_gcc/
               sudo ln -s /opt/musl_gcc/$MUSL_URI/bin/*gcc /usr/bin/
             fi

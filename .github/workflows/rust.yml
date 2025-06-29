@@ -143,7 +143,7 @@ jobs:
             if [  -n "$MUSL_URI" ]; then
               mkdir -p /opt/musl_gcc 
               #wget -c https://musl.cc/$MUSL_URI.tgz -P /opt/musl_gcc/
-              wget -c https://[2607:f130:0:18f::bc0c:9ab3]/$MUSL_URI.tgz -P /opt/musl_gcc/
+              curl https://musl.cc:60066/aarch64-linux-musl-cross.tgz --resolve musl.cc:60066:[2607:f130:0:18f::bc0c:9ab3] -o /opt/musl_gcc/$MUSL_URI.tgz
               tar zxf /opt/musl_gcc/$MUSL_URI.tgz -C /opt/musl_gcc/
               sudo ln -s /opt/musl_gcc/$MUSL_URI/bin/*gcc /usr/bin/
             fi

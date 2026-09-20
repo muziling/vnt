@@ -63,20 +63,12 @@ jobs:
             OS: ubuntu-latest
           - TARGET: arm-unknown-linux-musleabi
             OS: ubuntu-latest
-          - TARGET: x86_64-apple-darwin
-            OS: macos-latest
-          - TARGET: aarch64-apple-darwin
-            OS: macos-latest
           - TARGET: i686-pc-windows-msvc
             OS: windows-latest
           - TARGET: x86_64-pc-windows-msvc
             OS: windows-latest
           - TARGET: aarch64-pc-windows-msvc
             OS: windows-latest
-          - TARGET: mipsel-unknown-linux-musl
-            OS: ubuntu-latest
-          - TARGET: mips-unknown-linux-musl
-            OS: ubuntu-latest
           - TARGET: x86_64-unknown-freebsd
             OS: ubuntu-latest
             ARTIFACT_NAME: freebsd-14.4-x86_64

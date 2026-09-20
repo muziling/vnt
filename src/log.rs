@@ -4,7 +4,7 @@ pub fn log_init(log_name: &str) {
     log_init0(log_name, None);
 }
 pub fn log_init0(log_name: &str, yaml: Option<&str>) {
-    let path = PathBuf::from("logs");
+    let path = PathBuf::from("/var/log/vnt2");
 
     if !path.exists() {
         let _ = std::fs::create_dir(&path);
